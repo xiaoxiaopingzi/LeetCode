@@ -8,6 +8,7 @@
 获取一个数组中第k大的数(k从1开始，到len(arr)结束)
 获取一个数组中前k小的数(k从1开始，到len(arr)结束)
 """
+import random
 
 
 # 返回一个数组中最小的数，其最优的算法的复杂度是O(n)，需要进行n-1次比较
@@ -27,6 +28,8 @@ def swap(arr, L, j):
 
 # arr[L+1,...,j] < v， arr[j+1,...,i] > v
 def paitition(arr, L, r):
+    # random.randint(a, b)-Return random integer in range [a, b], including both
+    swap(arr, L, random.randint(L + 1, r))
     v = arr[L]  # 选择数组的第一个元素作为标定点
     j = L  # arr[L+1,...,j]表示小于v的元素
     for i in range(L + 1, r + 1):
@@ -82,7 +85,7 @@ def getKminIndexNum(arr, L, r, i):
 # 获取数组中前k小的数
 def getBeforeKMinNum(arr, i):
     temp = getKminIndexNum(arr, 0, len(arr) - 1, i)
-    return sorted(arr[0: temp+1])
+    return sorted(arr[0: temp + 1])
 
 
 # 获取数组中第i大的数的索引

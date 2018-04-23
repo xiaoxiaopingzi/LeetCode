@@ -16,7 +16,8 @@ def swap(arr, L, j):
 
 # arr[L+1,...,j] < v， arr[j+1,...,i] > v
 def paitition(arr, L, r):
-    swap(arr, L, random.randint(L, r))
+    # random.randint(a, b)-Return random integer in range [a, b], including both end points.
+    swap(arr, L, random.randint(L + 1, r))
     v = arr[L]  # 选择数组的第一个元素作为标定点
     j = L  # arr[L+1,...,j]表示小于v的元素
     for i in range(L + 1, r + 1):
@@ -40,3 +41,4 @@ def quickSort(arr, L, r):
 if __name__ == "__main__":
     arr = [1, 5, 7, 84, 3, 5, 45, 46, 7, 8, 23, 27, 23, 4, 23, 423, 42, 34, 234, 5, 46, 57, 6, 34, 54, 23, 42, 3432]
     print(quickSort(arr, 0, len(arr) - 1))
+    print(help(random.randint))
