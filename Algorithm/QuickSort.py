@@ -5,8 +5,11 @@
 @time: 2018-04-23 14:00
 
 快速排序的Python实现
+
+时间复杂度为 O(nlogn)
 """
 import random
+
 
 def swap(arr, L, j):
     temp = arr[L]
